@@ -56,6 +56,8 @@ export default function Dashboard() {
             <DashboardLink to="/admin/skills" label="Skills" />
             <DashboardLink to="/admin/certs" label="Certifications" />
             <DashboardLink to="/admin/timeline" label="Experience Timeline" />
+            <DashboardLink to="/admin/media" label="Media & Socials" />
+            <DashboardLink to="/admin/blogs" label="Blogs & Events" />
             <DashboardLink to="/admin/about" label="About & Stats" />
             <DashboardLink to="/admin/visibility" label="Visibility Toggles" />
             <DashboardLink to="/admin/resume" label="Resume PDF" />

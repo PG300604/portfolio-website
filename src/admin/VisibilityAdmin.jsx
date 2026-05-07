@@ -38,7 +38,8 @@ export default function VisibilityAdmin() {
     { key: 'projects', label: 'Projects Section' },
     { key: 'certifications', label: 'Certifications Section' },
     { key: 'timeline', label: 'Experience Timeline Section' },
-    { key: 'media', label: 'Media/Pictures Section' },
+    { key: 'media', label: 'Media & Socials Section' },
+    { key: 'blogs', label: 'Blogs & Events Section' },
     { key: 'contact', label: 'Contact Section' }
   ];
 

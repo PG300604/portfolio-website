@@ -6,7 +6,16 @@ import { ProtectedRoute } from './shared/ProtectedRoute';
 import Login from './admin/Login';
 import Dashboard from './admin/Dashboard';
 import ProjectsAdmin from './admin/ProjectsAdmin';
+import SkillsAdmin from './admin/SkillsAdmin';
+import CertsAdmin from './admin/CertsAdmin';
+import AboutAdmin from './admin/AboutAdmin';
+import VisibilityAdmin from './admin/VisibilityAdmin';
+import ResumeAdmin from './admin/ResumeAdmin';
+import TimelineAdmin from './admin/TimelineAdmin';
+import MediaAdmin from './admin/MediaAdmin';
+import BlogsAdmin from './admin/BlogsAdmin';
 
+// Public Views
 import Navbar from './components/shared/Navbar';
 import Footer from './components/shared/Footer';
 import Hero from './components/Hero/Hero';
@@ -16,16 +25,8 @@ import Projects from './components/Projects/Projects';
 import Certifications from './components/Certifications/Certifications';
 import Timeline from './components/Timeline/Timeline';
 import Media from './components/Media/Media';
+import Blogs from './components/Blogs/Blogs';
 import Contact from './components/Contact/Contact';
-
-import SkillsAdmin from './admin/SkillsAdmin';
-import CertsAdmin from './admin/CertsAdmin';
-import AboutAdmin from './admin/AboutAdmin';
-import VisibilityAdmin from './admin/VisibilityAdmin';
-import ResumeAdmin from './admin/ResumeAdmin';
-import TimelineAdmin from './admin/TimelineAdmin';
-
-// Public Views
 import Scene from './components/Hero/Scene';
 
 function PublicLayout() {
@@ -40,6 +41,7 @@ function PublicLayout() {
       <Certifications />
       <Timeline />
       <Media />
+      <Blogs />
       <Contact />
       <Footer />
     </div>
@@ -64,6 +66,8 @@ function App() {
             <Route path="visibility" element={<VisibilityAdmin />} />
             <Route path="resume" element={<ResumeAdmin />} />
             <Route path="timeline" element={<TimelineAdmin />} />
+            <Route path="media" element={<MediaAdmin />} />
+            <Route path="blogs" element={<BlogsAdmin />} />
             <Route path="*" element={<Dashboard />} />
           </Route>
         </Routes>
