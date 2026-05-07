@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0a0f1e;
+  --color-brand-surface: #0d1525;
+  --color-brand-surface-raised: #111d35;
+  --color-brand-border-muted: #1e2d4a;
+  --color-brand-border-default: #1A56DB;
+  --color-brand-border-strong: #388bfd;
+  
+  --color-brand-text-primary: #f0f6ff;
+  --color-brand-text-secondary: #8fa3c0;
+  --color-brand-text-muted: #4a6080;
+  
+  --color-brand-accent-blue: #1A56DB;
+  --color-brand-accent-blue-bright: #388bfd;
+  --color-brand-accent-green: #4fcea6;
+  --color-brand-accent-green-muted: #1a4a3a;
+
+  --color-brand-success: #4fcea6;
+  --color-brand-warning: #e5a823;
+  --color-brand-error: #e55353;
+  --color-brand-info: #388bfd;
+
+  --font-sora: "Sora", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text-primary);
+    font-family: var(--font-sora);
+  }
+}
+
+/* Base styles to enforce no border radius and other rules */
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Allow border radius for profile images */
+.profile-img {
+  border-radius: 50% !important;
+}
