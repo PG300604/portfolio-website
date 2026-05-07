@@ -37,7 +37,14 @@ export default function Timeline() {
             />
 
             <div className="flex flex-col gap-12">
-              {timelineData.map((item) => (
+              {[...timelineData].sort((a, b) => {
+                const getLatestYear = (str) => {
+                  if (!str) return 0;
+                  const years = str.match(/\d{4}/g);
+                  return years ? Math.max(...years.map(Number)) : 0;
+                };
+                return getLatestYear(b.year) - getLatestYear(a.year);
+              }).map((item) => (
                 <div key={item.id} className="relative pl-10 md:pl-16">
                   {/* Node Dot */}
                   <div className={`absolute left-[-4px] top-1.5 w-[10px] h-[10px] ${item.active ? 'bg-[#4fcea6]' : 'bg-[#1A56DB]'}`} />
