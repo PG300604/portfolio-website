@@ -49,10 +49,20 @@ export default function MediaAdmin() {
   };
 
   const updateProfile = (id, field, value) => {
-    setMediaData(prev => ({
-      ...prev,
-      profiles: prev.profiles.map(p => p.id === id ? { ...p, [field]: value } : p)
-    }));
+    setMediaData(prev => {
+      const updatedProfiles = prev.profiles.map(p => p.id === id ? { ...p, [field]: value } : p);
+      let updatedItems = prev.items;
+      if (field === 'id') {
+        updatedItems = prev.items.map(item => 
+          item.categoryId === id ? { ...item, categoryId: value } : item
+        );
+      }
+      return {
+        ...prev,
+        profiles: updatedProfiles,
+        items: updatedItems
+      };
+    });
   };
 
   const removeProfile = (id) => {
