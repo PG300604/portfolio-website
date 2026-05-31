@@ -15,9 +15,6 @@ export default function HeroText() {
     ? about.heroRoles.split(',').map(r => r.trim()).filter(Boolean) 
     : defaultRoles;
 
-  const name = "Priyanshu Ghosh";
-  const letters = Array.from(name);
-
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -49,27 +46,33 @@ export default function HeroText() {
     },
   };
 
+  const words = ["Priyanshu", "Ghosh"];
+
   return (
-    <div className="z-10 relative mt-20 md:mt-0 max-w-4xl px-6">
+    <div className="z-10 relative mt-28 md:mt-0 max-w-4xl px-6">
       <div className="font-mono text-[13px] text-[#4fcea6] uppercase tracking-[0.2em] mb-6 border-l-2 border-[#4fcea6] pl-4 py-1">
         Hello, I am
       </div>
       
       <motion.h1 
-        className="text-5xl md:text-7xl lg:text-[80px] font-sora font-extrabold text-[#f0f6ff] leading-[1.1] mb-6 flex flex-wrap"
+        className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-sora font-extrabold text-[#f0f6ff] leading-[1.1] mb-6 flex flex-wrap gap-x-4 gap-y-2"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        {letters.map((letter, index) => (
-          <motion.span variants={child} key={index} className={letter === ' ' ? 'w-4' : ''}>
-            {letter}
-          </motion.span>
+        {words.map((word, wIdx) => (
+          <span key={wIdx} className="whitespace-nowrap inline-block">
+            {Array.from(word).map((letter, lIdx) => (
+              <motion.span variants={child} key={lIdx} className="inline-block">
+                {letter}
+              </motion.span>
+            ))}
+          </span>
         ))}
       </motion.h1>
 
-      <div className="h-12 mb-10 flex items-center">
-        <span className="text-xl md:text-2xl font-mono text-[#8fa3c0] border-r-2 border-[#1A56DB] pr-1 animate-pulse">
+      <div className="h-16 mb-10 flex items-center">
+        <span className="text-lg sm:text-xl md:text-2xl font-mono text-[#8fa3c0] border-r-2 border-[#1A56DB] pr-1 animate-pulse leading-snug">
           {roles[currentRole]}
         </span>
       </div>

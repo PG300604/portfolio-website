@@ -75,6 +75,7 @@ export default function ProjectCard({ project, onClick }) {
               href={project.liveUrl} 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="bg-[#1A56DB] text-[#f0f6ff] border-3 border-[#1A56DB] px-6 py-2.5 font-mono font-bold text-[12px] uppercase tracking-[0.1em] hover:bg-[#388bfd] hover:border-[#388bfd] active:bg-[#0f3d9e] transition-colors text-center flex-1"
             >
               Live Demo
@@ -85,6 +86,7 @@ export default function ProjectCard({ project, onClick }) {
               href={project.githubUrl} 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="bg-transparent text-[#f0f6ff] border-2 border-[#1A56DB] px-6 py-2.5 font-mono font-bold text-[12px] uppercase tracking-[0.1em] hover:bg-[#1A56DB] transition-colors text-center flex-1"
             >
               Code
